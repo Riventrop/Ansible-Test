@@ -1,0 +1,50 @@
+{
+  "ignition": {
+    "version": "3.3.0"
+  },
+  "passwd": {
+    "users": [
+      {
+        "name": "core",
+        "sshAuthorizedKeys": [
+          "ecdsa-sha2-nistp521 AAAAE2VjZHNhLXNoYTItbmlzdHA1MjEAAAAIbmlzdHA1MjEAAACFBAA2GIdyV4cCkHj5raHsbXPyzU9zqzQdPAzkPw8WY9UcFK3WiLihZ3d6C7TQT+TQedUGvwEBysHHFWSu/X7ZbWCtSwBv05miCXpnsyCcOm5XafjK6UFmch8lc9cUgRRHK2VisGpXXZkZ0CpuE2GPTwlNl3i3iBOnd/SqGpp42HWqcR+T0A== anon@Lenovo"
+        ]
+      }
+    ]
+  },
+  "storage": {
+    "files": [
+      {
+        "path": "/opt/bin/docker-compose",
+        "contents": {
+          "source": "https://github.com/docker/compose/releases/download/v2.11.2/docker-compose-linux-x86_64",
+          "verification": {
+            "hash": "sha512-8ad55ea1234e206ecad3e8ecf30f93de5cc764a423bf8ff179b25320f148e475b569ab9ec68d90eacfe97269528ff8fef1746c05381c7d05edc85d2f2c245e69"
+          }
+        }
+      },
+      {
+        "path": "/etc/systemd/system/portainer-agent.service",
+        "contents": {
+          "compression": "gzip",
+          "source": "data:;base64,H4sIAAAAAAAC/3SPwWrrQAxF9/MV+oHJ5C2fIZuSLrorhNJFMEW2FSMy1hhJY5q/L66bdtNutLhcncM9vwh7G8KRrFeenYscTjdzmo5gpAv3BJeiYI7qLCM8F3VkIQUcSRyKQFeKA8oAQ9W1cmE1BxZzzBlXZAjhfNpobQiP79SfVt4hVdPUsaSh9FdS0CoQB4gz/N/v/zXrgRgFJ4L57n3bvHGBtKAmrffvnZX+2vwWfpczd195WkquE1nzR/7jS5++JqOTeViXPG3L2hBeUZyGh9thqtk5ViPdOepIHj4CAAD//yfrQhlZAQAA"
+        }
+      },
+      {
+        "path": "/etc/systemd/network/00-eth0.network",
+        "contents": {
+          "compression": "",
+          "source": "data:,%5BMatch%5D%0AName%3Deth0%0A%0A%5BNetwork%5D%0ADNS%3D192.168.1.50%0AAddress%3D192.168.1.49%2F24%0AGateway%3D192.168.1.1%0A"
+        }
+      }
+    ]
+  },
+  "systemd": {
+    "units": [
+      {
+        "enabled": true,
+        "name": "docker.service"
+      }
+    ]
+  }
+}
